@@ -9,10 +9,17 @@ def generate_multiplication_pdf(base_number, filename="multiplication_practice.p
     pdf.cell(200, 10, txt="Multiplication Practice", ln=True, align='C')
     pdf.ln(10)
     
-    for i in range(1, 21):  # Generate 20 questions
-        multiplier = random.randint(0, 12)
-        question = f"{base_number} x {multiplier} = "
-        pdf.cell(200, 10, txt=question, ln=True)
+    questions_per_column = 10
+    column_width = 95
+    
+    for i in range(questions_per_column):
+        multiplier1 = random.randint(0, 12)
+        multiplier2 = random.randint(0, 12)
+        question1 = f"{base_number} x {multiplier1} = "
+        question2 = f"{base_number} x {multiplier2} = "
+        
+        pdf.cell(column_width, 10, txt=question1, ln=0)
+        pdf.cell(column_width, 10, txt=question2, ln=1)
     
     pdf.output(filename)
     print(f"PDF generated: {filename}")
