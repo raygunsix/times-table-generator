@@ -4,9 +4,9 @@ from fpdf import FPDF
 def generate_multiplication_pdf(base_number, filename="multiplication_practice.pdf"):
     pdf = FPDF()
     pdf.add_page()
-    pdf.set_font("Arial", size=12)
+    pdf.set_font("Arial", size=36)
     
-    pdf.cell(200, 10, txt="Multiplication Practice", ln=True, align='C')
+    pdf.cell(200, 10, txt="Multiplication Practice!", ln=True, align='C')
     pdf.ln(10)
     
     questions_per_column = 10
