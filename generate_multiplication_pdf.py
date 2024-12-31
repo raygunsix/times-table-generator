@@ -12,6 +12,8 @@ def generate_multiplication_pdf(base_number, filename="multiplication_practice.p
     questions_per_column = 10
     column_width = 95
     
+    pdf.set_font("Arial", size=24)  # Double the font size for questions
+    
     for i in range(questions_per_column):
         multiplier1 = random.randint(0, 12)
         multiplier2 = random.randint(0, 12)
